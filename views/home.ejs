@@ -1,0 +1,14 @@
+<%- include("header.ejs") %>
+<h1>Home</h1>
+<p><%= content %></p>
+
+<% if (locals.posts) { %>
+    <% posts.forEach(post => { %>
+       <h1><%= post.title %></h1> 
+       <p><%= post.text.substring(0, 100) + "..." %> </p>
+       <a href='/posts/<%= post._id %>'>Read more</a>
+    <% }); %>
+<% } %>
+
+
+<%- include("footer.ejs") %>
